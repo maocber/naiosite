@@ -1,0 +1,216 @@
+/* Importa las fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400&display=swap');
+
+:root {
+    --primary-color: #3498db; /* Azul vibrante */
+    --secondary-color: #2c3e50; /* Gris oscuro */
+    --text-color: #ecf0f1; /* Gris claro */
+    --background-color: #1a2a3a; /* Azul oscuro casi negro */
+    --accent-color: #f1c40f; /* Amarillo para acentos */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    overflow: hidden; /* Evita barras de desplazamiento si el contenido es muy alto */
+    background: linear-gradient(135deg, var(--background-color) 0%, #0f1c2b 100%); /* Degradado sutil */
+}
+
+.container {
+    max-width: 900px;
+    padding: 40px;
+    background-color: rgba(44, 62, 80, 0.9); /* Gris oscuro semi-transparente */
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px); /* Efecto de desenfoque en el fondo */
+    animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.logo {
+    max-width: 150px;
+    margin-bottom: 30px;
+    animation: bounceIn 1s ease-out;
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    60% { transform: scale(1.1); opacity: 1; }
+    80% { transform: scale(0.9); }
+    100% { transform: scale(1); }
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.2em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.subtitle {
+    font-size: 1.4em;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Estilos de la Cuenta Regresiva */
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 25px; /* Espacio entre los elementos */
+    margin-top: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+}
+
+.countdown-item {
+    background-color: var(--secondary-color);
+    padding: 20px 30px;
+    border-radius: 8px;
+    min-width: 100px; /* Asegura un ancho mínimo */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.countdown-item span:first-child {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5em;
+    font-weight: 700;
+    color: var(--accent-color);
+    display: block;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.countdown-item span:last-child {
+    font-size: 1em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 1px;
+}
+
+.contact-info {
+    font-size: 1.2em;
+    margin-top: 30px;
+}
+
+.contact-info a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--accent-color);
+}
+
+.social-links {
+    margin-top: 40px;
+    margin-bottom: 30px;
+}
+
+.social-links a {
+    display: inline-block;
+    margin: 0 15px;
+    transition: transform 0.3s ease;
+}
+
+.social-links a img {
+    width: 40px;
+    height: 40px;
+    filter: brightness(0) invert(1); /* Para que los iconos sean blancos */
+}
+
+.social-links a:hover {
+    transform: translateY(-5px) scale(1.1);
+}
+
+.copyright {
+    font-size: 0.9em;
+    color: rgba(255, 255, 255, 0.6);
+    margin-top: 40px;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .container {
+        padding: 30px;
+        margin: 20px; /* Margen para pantallas más pequeñas */
+    }
+
+    h1 {
+        font-size: 2.5em;
+    }
+
+    .subtitle {
+        font-size: 1.2em;
+    }
+
+    .countdown {
+        flex-direction: row; /* Mantener en fila si el espacio lo permite */
+        flex-wrap: wrap; /* Permitir que se envuelvan */
+        gap: 15px; /* Menos espacio entre los elementos */
+    }
+
+    .countdown-item {
+        flex: 1 1 45%; /* Dos columnas en pantallas pequeñas */
+        max-width: 48%; /* Ajusta el ancho para dos columnas */
+        padding: 15px 20px;
+    }
+
+    .countdown-item span:first-child {
+        font-size: 2.5em;
+    }
+
+    .social-links a {
+        margin: 0 10px;
+    }
+
+    .social-links a img {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    .subtitle {
+        font-size: 1em;
+    }
+
+    .countdown {
+        gap: 10px;
+    }
+
+    .countdown-item {
+        flex: 1 1 48%; /* Un poco más de margen si es necesario */
+        padding: 10px 15px;
+    }
+
+    .countdown-item span:first-child {
+        font-size: 2em;
+    }
+
+    .social-links a img {
+        width: 30px;
+        height: 30px;
+    }
+}
